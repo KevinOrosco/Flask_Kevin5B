@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head>
+    <title>Lista de Cantantes</title>
+
+</head><body>
+
+    <h1>Cantantes</h1>
+    <ul>
+        {% for name in artist %}
+            <li>{{ artist["name"] }}</li>
+        {% endfor %}
+    </ul>
+</body></html>

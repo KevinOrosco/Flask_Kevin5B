@@ -10,12 +10,15 @@ db_name = "informacion.sqlite"
 db_file = os.path.join(db_folder, db_name) 
 db_sql_file = "datos.sql"
 
+
 def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect(
-            os.path.join( current_app.instance_path, "canciones/"),
-            detect_types=sqlite3.PARSE_DECLTYPES
+            
+            db_file,detect_types=sqlite3.PARSE_DECLTYPES
         )
+        g.db.row_factory = sqlite3.Row
+
 
     return g.db
 
@@ -30,14 +33,14 @@ def init_db():
 
 
    try:
-     os.makedirs(app.instance_path)
+     os.makedirs(current_app.instance_path)
    except OSError:
         pass
  
    db = get_db()
 
     
-   with current_app.open_resource('datos.sql') as f:
+   with current_app.open_resource(db_sql_file) as f:
      db.executescript(f.read().decode('utf8'))
 
 
