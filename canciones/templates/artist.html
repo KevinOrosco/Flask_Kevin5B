@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head>
     <title>Lista de Cantantes</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for()}}">
+    <link rel="stylesheet" type="text/css">
 
 </head><body>
 
@@ -10,4 +10,18 @@
             <li>{{ artista["Name"] }}</li>
         {% endfor %}
     </ul>
+    <h1>Generos</h1>
+    <ul>
+        {% for genero in generos %}
+            <li>{{ genero["Name"] }}</li>
+        {% endfor %}
+    </ul>
+    </ul>
+    <h1>Canciones</h1>
+    <ul>
+        {% for cancion in canciones %}
+            <li>{{ cancion["Name"] }}</li>
+        {% endfor %}
+    </ul>
+    
 </body></html>
