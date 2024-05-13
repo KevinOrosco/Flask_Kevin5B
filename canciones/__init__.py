@@ -6,18 +6,15 @@ with app.app_context():
     from . import db
     db.init_app(app)
 
-
-
-
 @app.route("/artist")
 def artistas():
-    base_de_datos = db.get_db()
     consulta = """
-                SELECT Name FROM Artists
+                SELECT Name FROM artists
                 ORDER BY Name;
                """
     
-    resultado = base_de_datos.execute(consulta)
+    con = db.get_db()
+    resultado = con.execute(consulta)
     lista_de_resultados = resultado.fetchall()
-    
-    return render_template("index.html", artistas = lista_de_resultados)
+    pagina = render_template("artist.html", artistas = lista_de_resultados)
+    return pagina
