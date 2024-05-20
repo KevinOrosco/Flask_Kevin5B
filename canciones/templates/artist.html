@@ -7,20 +7,10 @@
     <h1>Cantantes</h1>
     <ul>
         {% for artista in artistas %}
-            <li>{{ artista["Name"] }}</li>
-        {% endfor %}
-    </ul>
-    <h1>Generos</h1>
-    <ul>
-        {% for genero in generos %}
-            <li>{{ genero["Name"] }}</li>
-        {% endfor %}
-    </ul>
-    </ul>
-    <h1>Canciones</h1>
-    <ul>
-        {% for cancion in canciones %}
-            <li>{{ cancion["Name"] }}</li>
+            <li><a href="{{ url_for('artista.detalle', id=artista['ArtistId']) }}">
+                {{ artista["Name"] }} 
+                </a>
+            </li>
         {% endfor %}
     </ul>
     
