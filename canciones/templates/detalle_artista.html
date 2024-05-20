@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head>
+    <title>Detalle del artista</title>
+    <link rel="stylesheet" type="text/css">
+
+</head><body>
+
+    <h1>{{ artista }}</h1>
+
+    <h1>Canciones</h1>
+    <ul>
+        {% for cancion in canciones %}
+            <li>{{ cancion["Name"] }}</li>
+        {% endfor %}
+    </ul>
+    
+</body></html>
