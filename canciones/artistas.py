@@ -24,16 +24,15 @@ def detalle(id):
         WHERE ArtistId = ? ;
     """
     consulta2 = """
-        SELECT t.name, g.Title FROM tracks t
-        JOIN albums g ON t.AlbumId = g.AlbumId
+        SELECT a.name, g.Title FROM albums g
         JOIN artists a ON g.ArtistId = a.ArtistId
         WHERE a.ArtistId = ? ;
     """
     res = con.execute(consulta1, (id, ))
     artista = res.fetchone()
     res = con.execute(consulta2, (id, ))
-    lista_canciones = res.fetchall()
+    lista_albums = res.fetchall()
     pagina = render_template("detalle_artista.html",
                              artista = artista,
-                             canciones = lista_canciones)
+                             albums = lista_albums)
     return pagina

@@ -1,15 +1,15 @@
 <!DOCTYPE html><html><head>
-    <title>Detalle del artista</title>
+    <title>Lista de albums</title>
     <link rel="stylesheet" type="text/css">
 
 </head><body>
 
-    <h1>artista {{ artista["Name"]}}</h1>
-
-    <h1>Albums</h1>
+    <h1>albums</h1>
     <ul>
         {% for album in albums %}
-            <li>{{ album["Title"] }}</li>
+            <li>
+                {{ album["Title"] }} 
+            </li>
         {% endfor %}
     </ul>
     

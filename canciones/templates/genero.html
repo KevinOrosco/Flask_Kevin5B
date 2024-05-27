@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head>
+    <title>Lista de Generos</title>
+    <link rel="stylesheet" type="text/css">
+
+</head><body>
+
+    <h1>Generos</h1>
+    <ul>
+        {% for genero in generos %}
+            <li>
+                {{ genero["Name"] }} 
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body></html>
