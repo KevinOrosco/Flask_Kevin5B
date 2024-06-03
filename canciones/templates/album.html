@@ -8,7 +8,9 @@
     <ul>
         {% for album in albums %}
             <li>
+                <a href="{{ url_for('album.album_detalle', id=album['AlbumId']) }}">
                 {{ album["Title"] }} 
+            </a>
             </li>
         {% endfor %}
     </ul>

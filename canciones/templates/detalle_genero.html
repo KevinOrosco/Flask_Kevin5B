@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+    <title>Canciones del genero
+    </title>
+    <link rel="stylesheet" type="text/css">
+
+</head><body>
+
+    <h1>genero {{ genero["Name"]}}</h1>
+
+    <h1>Canciones</h1>
+    <ul>
+        {% for cancion in canciones %}
+            <li>{{ cancion["name"] }}</li>
+        {% endfor %}
+    </ul>
+    
+</body></html>

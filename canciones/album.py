@@ -24,7 +24,7 @@ def album_detalle(id):
         WHERE AlbumId = ? ;
     """
     consulta2 = """
-        SELECT a.name, g.Title FROM albums g
+        SELECT g.Title, a.name, g.AlbumId FROM albums g
         JOIN tracks a ON g.AlbumId = a.AlbumId
         WHERE g.AlbumId = ? ;
     """
