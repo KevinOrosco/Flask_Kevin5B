@@ -24,7 +24,7 @@ def detalle(id):
         WHERE GenreId = ?;
     """
     consulta2 = """
-        SELECT t.name, g.name FROM tracks t
+        SELECT t.name AS nombre, g.name FROM tracks t
         JOIN genres g ON t.GenreId = g.GenreId
         WHERE g.GenreId = ?;
     """

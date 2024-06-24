@@ -8,7 +8,9 @@
     <ul>
         {% for genero in generos %}
             <li>
-                {{ genero["Name"] }} 
+                <a href="{{ url_for('genero.detalle', id=genero['GenreId']) }}">
+                    {{ genero["Name"] }} 
+                </a>
             </li>
         {% endfor %}
     </ul>
