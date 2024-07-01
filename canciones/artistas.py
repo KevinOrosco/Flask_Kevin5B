@@ -3,7 +3,7 @@ from . import db
 
 bp = Blueprint('artista', __name__, url_prefix='/artist')
 
-@bp.route("/artist")
+@bp.route("/")
 def artistas():
     consulta1 = """
                 SELECT Name, ArtistId FROM artists
@@ -20,13 +20,12 @@ def artistas():
 def detalle(id):
     con = db.get_db()
     consulta1 = """
-        SELECT Name, ArtistId FROM artists
+        SELECT Name FROM artists
         WHERE ArtistId = ? ;
     """
     consulta2 = """
-        SELECT a.name, g.Title FROM albums g
-        JOIN artists a ON g.ArtistId = a.ArtistId
-        WHERE a.ArtistId = ? ;
+        SELECT Title, AlbumId FROM albums
+        WHERE ArtistId = ?;
     """
     res = con.execute(consulta1, (id, ))
     artista = res.fetchone()
