@@ -4,26 +4,8 @@
 
 </head><body>
 
-    <h1>{{ artista["Name"]}}</h1>
+    <h1>{{ cancion["Name"]}}</h1>
 
     <h1>Detalles</h1>
-
-    <ul>
-        {% for album in albums %}
-            <a href="{{ url_for('album.album_detalle', id=album['AlbumId']) }}">
-                <li>Album: {{ album["Title"] }}</li>
-            </a>
-        {% endfor %}
-        {% for genre in generos %}
-            <a href="{{ url_for('genero.detalle', id=genero['GenreId']) }}">
-                <li>Genero: {{ genre["name"] }}</li>
-            </a>
-        {% endfor %}
-        {% for artist in artistas %}
-            <a href="{{ url_for('artista.detalle', id=artista['ArtistId']) }}">
-                <li>Artista: {{ artist["name"] }}</li>
-            </a>
-        {% endfor %}
-    </ul>
     
 </body></html>

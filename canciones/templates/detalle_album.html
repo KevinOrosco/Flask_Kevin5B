@@ -10,8 +10,9 @@
     <h1>Canciones</h1>
     <ul>
         {% for cancion in canciones %}
-        <a href=""></a>
+        <a href="{{url_for('canciones.detalle', id=cancion['TrackId'])}}">
             <li>{{ cancion["Name"] }}</li>
+        </a>
         {% endfor %}
     </ul>
     

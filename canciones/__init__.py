@@ -14,3 +14,6 @@ app.register_blueprint(genero.bp)
 
 from . import album
 app.register_blueprint(album.bp)
+
+from . import canciones
+app.register_blueprint(canciones.bp)
